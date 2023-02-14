@@ -1,5 +1,5 @@
-#Cree una clase Punto que represente un punto en el plano cartesiano.
-"""A la clase del punto anterior, defínale los siguientes métodos:
+# 2. Cree una clase Punto que represente un punto en el plano cartesiano.
+""" 3. A la clase del punto anterior, defínale los siguientes métodos:
 - Un método mostrar que imprima por consola las coordenadas del punto
 - Un método mover que cambie las coordenadas del punto"""
 
