@@ -11,14 +11,10 @@ class Circulo:
 
     def area(self):
         area_circulo = round(math.pi*(self.radio**2),2)
-        return(f"El area del circulo es: {area_circulo}")
+        return area_circulo
 
     def primetro(self):
         
         perimetro_circulo = round(math.pi*(2*self.radio),2)
-        return(f"El perimetro del circulo es: {perimetro_circulo}")
+        return perimetro_circulo
 
-
-circulo_1 = Circulo(2, 3)
-print(circulo_1.area())
-print(circulo_1.primetro())

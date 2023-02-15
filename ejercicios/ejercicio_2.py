@@ -13,23 +13,35 @@ class Punto:
 
     def mostrar(self):
 
-        print(f"Las cordenas ingresadas son ({self.valor_ejex},{self.valor_ejey})")
+        return self.valor_ejex,self.valor_ejey
     
-    def cambiar_puntos(self):
+    def cambiar_puntos(self, nuevo_valor_x, nuevo_valor_y):
 
-        self.valor_ejex = int(input("Ingrese el nuevo valor de la coordenada en el eje X: "))
-        self.valor_ejey = int(input("Ingrese el nuevo valor de la coordenada en el eje Y: "))
+        self.valor_ejex = nuevo_valor_x
+        self.valor_ejey = nuevo_valor_y
+        return self.valor_ejex, self.valor_ejey
 
-    def mover(self):
-        desplazamiento_x = int(input("Ingrese lo que desea desplazar en X la coordenada: "))
-        desplazamiento_y = int(input("Ingrese lo que desea desplazar en Y la cordenada: "))
+
+    def mover(self, desplazamiento_x, desplazamiento_y):
+        desplazamiento_x = desplazamiento_x
+        desplazamiento_y = desplazamiento_y
         self.valor_ejex += desplazamiento_x
         self.valor_ejey += desplazamiento_y
+        return self.valor_ejex, self.valor_ejey
+        
     
     def distancia(self, punto2):
 
         cateto_1 = punto2.valor_ejey - self.valor_ejey
         cateto_2 = punto2.valor_ejex - self.valor_ejex
         d = math.sqrt((cateto_1**2) + (cateto_2**2))
-        return (f"La distancia entre los puntos es de {d}")
-        
+        return d
+
+
+punto_1 = Punto(1,2)
+punto_2 = Punto(6,2)
+
+print(punto_1.distancia(punto_2))
+print(punto_1.mostrar())
+print(punto_1.mover(1,1))
+print(punto_1.cambiar_puntos(0,0))
