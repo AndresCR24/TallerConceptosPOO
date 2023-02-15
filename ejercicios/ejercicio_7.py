@@ -14,39 +14,40 @@ class CuentaBancaria:
         self.balance = balance
         #self.control = 0
 
-    def depositar(self):
+    def depositar(self, ingresar_dinero, ingrese_cuenta):
         
-        ingresar_dinero = float(input("Ingrese la cantidad de dinero que desea deósitar: $"))
-        ingrese_cuenta = int(input("Ingrese el numero de cuenta de la persona a la que desea depositar el dinero: "))
-        ingrese_dinero = ingresar_dinero + self.balance
-        self.control = ingresar_dinero + self.balance
+        ingresar_dinero = ingresar_dinero
+        ingrese_cuenta = ingrese_cuenta
+        self.balance += ingresar_dinero
+        #self.control = ingresar_dinero + self.balance
         self.numero_cuenta = ingrese_cuenta
         
-        return(f"El numero de cuenta es: {ingrese_cuenta}, El nombre del propietario es: {self.propietarios}, y el dinero que tiene en la cuenta es de: {ingresar_dinero}")
+        return self.numero_cuenta, self.balance
 
-    def retirar(self):
+    def retirar(self, retirar_dinero):
 
-        retirar_dinero = float(input("Ingrese la cantidad de dinero que desea retirar: $"))
-        contraseña = int(input("Ingrese la contraseña: "))
-        retiro = self.control - retirar_dinero
-        self.balance = retiro
+        retirar_dinero = retirar_dinero
+        self.balance -= retirar_dinero
 
-        return(f"El retiro fue exitoso quedas con este dinero disponible {retiro} la cuenta ")
+        return self.balance
 
     def aplicar_cuota_manejo(self):
 
         cuota_manejo = self.balance +(self.balance * 0.02)
-        return(f"El valor con el 2% de cuota de manejo es de: {cuota_manejo}")
+        self.balance = cuota_manejo
+        return self.balance
 
     def mostrar_detalles(self):
-        return(f"El numero de cuenta es: {self.numero_cuenta} \n El nombre del titular de la cuenta es: {self.propietarios} \n El dinero que hay disponible en la cuenta es {self.balance}")
+        return self.numero_cuenta, self.propietarios, self.balance
 
-
+#Prueba del funcionamiento del codigo
 usuario_1 = CuentaBancaria(101, "Andres", 1000)
-print(usuario_1.depositar())
+print(usuario_1.depositar(2000, 104))
 print("-------------------------------------------------------------")
-print(usuario_1.retirar())
+print(usuario_1.retirar(1000))
 print("-------------------------------------------------------------")
 print(usuario_1.mostrar_detalles())
 print("-------------------------------------------------------------")
 print(usuario_1.aplicar_cuota_manejo())
+print("--------------------------------------------------------------")
+print(usuario_1.mostrar_detalles())

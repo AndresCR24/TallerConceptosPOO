@@ -15,9 +15,10 @@ class Rectangulo:
 
     def puntos(self,):
 
-        valor_ejex = int(input("Ingrese el valor en el eje X de su coordenada: "))
-        valor_ejey = int(input("Ingrese el valor en el eje Y para su coordenada: "))
-        self.coordenada_1 =[valor_ejex,valor_ejey]
+        #valor_ejex = 
+        #valor_ejey = 
+        #self.coordenada_1 =[valor_ejex,valor_ejey]
+        pass
 
 
     def distancia(self, punto2):
@@ -25,7 +26,7 @@ class Rectangulo:
         cateto_1 = punto2.valor_ejey - self.valor_ejey
         cateto_2 = punto2.valor_ejex - self.valor_ejex
         d = math.sqrt((cateto_1**2) + (cateto_2**2))
-        return (f"La distancia entre los puntos es de {d}")
+        return d
 
     def perimetro(self):
         pass
